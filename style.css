@@ -1,0 +1,397 @@
+/* ============================================
+   Style 8: Soft
+   Centred, rounded, warm colours, light
+   ============================================ */
+
+/* ---- 1. Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- 2. Colours kept in one place ---- */
+:root {
+  --bg: #f6f3ee;
+  --card: #ffffff;
+  --text: #25221e;
+  --grey: #77716a;
+  --line: #e6e1d8;
+  --accent: #d9541e;
+  --nav: rgba(255, 255, 255, 0.8);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* everything lives in one narrow centred column */
+main,
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- 3. Floating pill menu ---- */
+.pill-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 8px 10px 8px 20px;
+  background-color: var(--nav);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+}
+
+.links a {
+  color: var(--grey);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.tools {
+  display: flex;
+  gap: 6px;
+}
+
+.tools button {
+  font-family: inherit;
+  font-size: 15px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.tools button:active {
+  transform: scale(0.92);
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* ---- 4. Hero ---- */
+.hero {
+  text-align: center;
+  padding: 150px 0 70px 0;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px auto;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 8px;
+}
+
+.role {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.lead {
+  max-width: 480px;
+  margin: 0 auto 28px auto;
+  color: var(--grey);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 26px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn.dark {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.btn.light {
+  background-color: var(--card);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+/* ---- 5. Sections ---- */
+section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--grey);
+  margin-bottom: 22px;
+}
+
+.big {
+  font-size: 24px;
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+}
+
+/* ---- 6. Skills as tags ---- */
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  padding: 9px 22px;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tags span:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+/* ---- 7. Projects as rows ---- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.item {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  padding: 22px 26px;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.item:hover {
+  transform: translateX(6px);
+  border-color: var(--accent);
+}
+
+.num {
+  font-weight: 700;
+  color: var(--accent);
+  padding-top: 2px;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.item h3 {
+  font-size: 19px;
+  letter-spacing: -0.3px;
+}
+
+.item p {
+  color: var(--grey);
+  font-size: 15px;
+}
+
+/* ---- 8. Contact card ---- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  text-align: left;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 13px 16px;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.card .btn {
+  align-self: center;
+  margin-top: 6px;
+}
+
+#formMsg {
+  text-align: center;
+  font-size: 14px;
+  min-height: 22px;
+}
+
+/* ---- 9. Footer ---- */
+footer {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  color: var(--grey);
+  font-size: 14px;
+}
+
+/* ---- 10. Phone ---- */
+@media (max-width: 700px) {
+
+  .pill-nav {
+    width: calc(100% - 28px);
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+    width: auto !important;
+    border-radius: 999px !important;
+    padding: 0 16px;
+    font-size: 13px !important;
+  }
+
+  /* the links drop down under the pill until Menu is clicked */
+  .links {
+    display: none;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 24px;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    font-size: 16px;
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .big {
+    font-size: 20px;
+  }
+}
+
+/* ---- 11. Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
