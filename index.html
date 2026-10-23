@@ -1,119 +1,228 @@
 <!DOCTYPE html>
-<!-- Portfolio website - Style 8: Soft -->
-<!-- TIP: Ctrl + H -> "Replace All" to change "Nithish" and the link placeholders everywhere -->
+<!-- Portfolio website - Style 3: Poster -->
+<!-- TIP: use Find & Replace (Ctrl + H) in your editor to change "YOUR NAME" and "Nithish" -->
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nithish | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.className="js";</script>
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
 
-  <!-- ===== FLOATING PILL MENU (centred at the top) ===== -->
-  <header class="pill-nav">
-    <a href="#top" class="logo">N</a>
+  <!-- ===== LEFT SCROLL ANIMATION (fixed on the left, moves while you scroll) ===== -->
+  <aside class="rail" aria-hidden="true">
+    <div class="rail-line"><div class="rail-fill" id="railFill"></div></div>
+    <div class="rail-dot" id="railDot">&#10033;</div>
+    <span class="rail-name" id="railName">Home</span>
+    <span class="rail-pct" id="railPct">00</span>
+  </aside>
 
-    <nav class="links" id="menu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <!-- ===== TOP BAR ===== -->
+  <header class="top">
+    <a href="#top" class="mark">Nithish</a>
+
+    <!-- JavaScript writes the live time here -->
+    <span class="clock" id="clock"></span>
+
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
-    <div class="tools">
-      <!-- only visible on phones -->
-      <button id="menuBtn" class="menu-btn">Menu</button>
-    </div>
+    <button class="menu-btn" id="menuBtn">Menu</button>
   </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="pill">CS Student &middot; 2026</p>
+
+        <!-- letters are split by script.js and fade in from blur, like typing -->
+        <h1 id="heroName" class="type-blur" aria-label="Nithish">Nithish</h1>
+
+        <p class="hero-sub blur-words">
+          Second year B.Sc. Computer Science at KG College of Arts and Science, Coimbatore.
+          I like building small, useful websites and applications.
+        </p>
+      </div>
+
+      <!-- photo card: stays tilted, follows the mouse when you hover -->
+      <div class="tilt" id="tilt">
+        <div class="tilt-card" id="tiltCard">
+          <img src="profile.jpg" alt="Nithish">
+          <span class="glare" id="glare"></span>
+        </div>
+        <span class="sticker" id="sticker">Hello!<br>I'm Nithish</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- moving strip of skills. the same words are written twice so the loop has no gap -->
+  <div class="ticker">
+    <div class="track">
+      <span>HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; </span>
+      <span>HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; HTML &#9679; CSS &#9679; JavaScript &#9679; Python &#9679; Git &#9679; GitHub &#9679; </span>
+    </div>
+  </div>
 
   <main>
 
-    <!-- ===== HERO (everything centred) ===== -->
-    <section class="hero" id="top">
-      <div class="avatar"><img src="profile.jpg" alt="Nithish"></div>
-      <h1>Nithish</h1>
-      <p class="role">B.Sc. Computer Science Student</p>
-      <p class="lead">
-        I study at KG College of Arts and Science, Coimbatore.
-        I like building small, useful websites and applications.
-      </p>
-
-      <!-- CHANGE THESE 2 LINKS -->
-      <div class="buttons">
-        <a class="btn dark" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn light" href="mailto:YOUR-EMAIL@gmail.com">Email</a>
-      </div>
-    </section>
-
     <!-- ===== ABOUT ===== -->
     <section id="about">
-      <h2>About</h2>
-      <p class="big">
-        I am in my second year of computer science. I enjoy building projects
-        outside of class and I want to become a full stack developer.
-      </p>
+      <div class="wrap">
+        <p class="label">(01) About</p>
+        <p class="statement blur-words">
+          I am in my second year of computer science. I enjoy building projects
+          outside of class and I want to become a full stack developer.
+        </p>
+        <p class="small blur-words">
+          I like building small, useful websites and applications.
+        </p>
+      </div>
     </section>
 
-    <!-- ===== SKILLS (small rounded tags) ===== -->
+    <!-- ===== SKILLS ===== -->
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>Git</span>
-        <span>GitHub</span>
+      <div class="wrap">
+        <p class="label">(02) Skills</p>
+
+        <div class="slider">
+          <div class="slide-track">
+            <div class="cell"><b>HTML</b><span>Page structure</span></div>
+            <div class="cell"><b>CSS</b><span>Layout and design</span></div>
+            <div class="cell"><b>JavaScript</b><span>Behaviour and the DOM</span></div>
+            <div class="cell"><b>Python</b><span>Scripts and AI projects</span></div>
+            <div class="cell"><b>Git</b><span>Saving and sharing code</span></div>
+            <div class="cell"><b>GitHub</b><span>Sharing projects online</span></div>
+            <div class="cell"><b>HTML</b><span>Page structure</span></div>
+            <div class="cell"><b>CSS</b><span>Layout and design</span></div>
+            <div class="cell"><b>JavaScript</b><span>Behaviour and the DOM</span></div>
+            <div class="cell"><b>Python</b><span>Scripts and AI projects</span></div>
+            <div class="cell"><b>Git</b><span>Saving and sharing code</span></div>
+            <div class="cell"><b>GitHub</b><span>Sharing projects online</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===== PROJECTS (one wide row each) ===== -->
+    <!-- ===== PROJECTS ===== -->
     <section id="projects">
-      <h2>Projects</h2>
+      <div class="wrap">
+        <p class="label">(03) Projects</p>
+      </div>
 
-      <div class="list">
-        <div class="item">
-          <span class="num">01</span>
-          <div>
-            <h3>Billing &amp; Receipt (Session-Only)</h3>
-            <p>A C programming project that creates bills and prints receipts for the current session.</p>
+      <div class="plist">
+        <div class="project">
+          <div class="wrap project-in">
+            <span class="p-num">01</span>
+            <div>
+              <h3>Billing &amp; Receipt (Session-Only)</h3>
+              </div>
+            <div class="p-detail"><p>A C programming project I built that creates bills and prints receipts for the current session.</p><span>Built with C &middot; billing logic &middot; receipt printing</span></div>
+            <span class="p-tag">C</span>
           </div>
         </div>
 
-        <div class="item">
-          <span class="num">02</span>
-          <div>
-            <h3>Score Board</h3>
-            <p>A score board application built using Java.</p>
+        <div class="project">
+          <div class="wrap project-in">
+            <span class="p-num">02</span>
+            <div>
+              <h3>Score Board</h3>
+              </div>
+            <div class="p-detail"><p>A score board application I built using Java to keep and show scores.</p><span>Built with Java &middot; OOP &middot; score tracking</span></div>
+            <span class="p-tag">Java</span>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ===== CONTACT (one centred card) ===== -->
-    <section id="contact">
-      <h2>Contact</h2>
+    <!-- ===== CONTACT (orange block) ===== -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <p class="label">(04) Contact</p>
 
-      <form id="contactForm" class="card">
-        <input type="text" id="name" placeholder="Your name">
-        <input type="text" id="email" placeholder="Your email">
-        <textarea id="message" rows="4" placeholder="Message"></textarea>
-        <button type="submit" class="btn dark">Send message</button>
-        <!-- JavaScript writes the result here -->
-        <p id="formMsg"></p>
-      </form>
+        <h2 class="lets">Let's talk<span class="dot">.</span></h2>
+
+        <!-- CHANGE THESE 2 LINKS -->
+        <p class="elsewhere">
+          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub &#8599;</a>
+          <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+        </p>
+
+        <form id="contactForm" novalidate>
+          <input type="text" id="name" placeholder="Your name" maxlength="40" autocomplete="name">
+          <small class="err" id="eName"></small>
+
+          <!-- email = name + @ + provider + .com -->
+          <div class="emailrow" id="emailRow">
+            <input type="text" id="emailUser" placeholder="your email name" maxlength="40" autocomplete="off" spellcheck="false">
+            <button type="button" class="at" id="atBtn" aria-label="Choose mail provider">@</button>
+            <button type="button" class="prov" id="provBtn">pick mail &#9662;</button>
+            <input type="text" id="otherDom" class="other" placeholder="mydomain.com" maxlength="40" hidden>
+            <span class="tld" id="tld"></span>
+            <div class="mb-menu" id="mbMenu">
+              <p>Which mail do you use?</p>
+              <button type="button" data-d="gmail">gmail</button>
+              <button type="button" data-d="outlook">outlook</button>
+              <button type="button" data-d="yahoo">yahoo</button>
+              <button type="button" data-d="hotmail">hotmail</button>
+              <button type="button" data-d="icloud">icloud</button>
+              <button type="button" data-d="rediffmail">rediffmail</button>
+              <button type="button" data-d="protonmail">protonmail</button>
+              <button type="button" data-d="other">other&hellip;</button>
+            </div>
+          </div>
+          <small class="err" id="eEmail"></small>
+          <div class="howto" id="howto">
+            <div class="row on" data-s="1"><span class="n">1</span><span>Type the first part of your email, the part <b>before the @</b> (example: <b>ravi.k</b>)</span></div>
+            <div class="row" data-s="2"><span class="n">2</span><span>Click the <b>@</b> (or type @). A list opens, pick your mail: <b>gmail, outlook, yahoo</b>&hellip; The <b>.com</b> is added for you. School or college mail? Pick <b>other</b> and type the full domain.</span></div>
+            <div class="row" data-s="3"><span class="n">3</span><span>Write your message and press <b>Send</b>.</span></div>
+            <div class="final" id="howFinal"></div>
+          </div>
+
+          <textarea id="message" rows="3" placeholder="Your message (at least 10 characters)" maxlength="500"></textarea>
+          <small class="err" id="eMsg"></small>
+          <!-- hidden trap for bots -->
+          <input type="text" id="website" tabindex="-1" autocomplete="off" class="trap">
+          <span class="count" id="count">0 / 500</span>
+          <button type="submit">Send &rarr;</button>
+          <p id="formMsg"></p>
+        </form>
+
+        <!-- messages saved in this browser (localStorage) -->
+        <div class="sent" id="sentBox" hidden>
+          <p class="label">Your messages (saved on this device)</p>
+          <ul id="sentList"></ul>
+          <button type="button" id="clearSent">Clear all</button>
+        </div>
+
+        <!-- messages saved in this browser (localStorage) -->
+        <div class="sent" id="sentBox" hidden>
+          <p class="label">Your messages (saved on this device)</p>
+          <ul id="sentList"></ul>
+          <button type="button" id="clearSent">Clear all</button>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Nithish</p>
+    <span>&copy; 2026 Nithish</span>
+    <a href="#top">Top &uarr;</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=6"></script>
 </body>
 
 </html>
